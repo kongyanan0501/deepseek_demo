@@ -1,0 +1,10 @@
+[server]
+# 云端部署必需：无头模式，不等待浏览器/用户输入
+headless = true
+# 允许通过代理/负载均衡访问
+enableCORS = false
+enableXsrfProtection = true
+
+[browser]
+# 不自动打开浏览器
+gatherUsageStats = false
