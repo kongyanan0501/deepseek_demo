@@ -12,6 +12,6 @@ COPY . .
 # 暴露端口（Railway 会通过 PORT 环境变量注入）
 EXPOSE 8080
 
-# 使用 CMD 在运行时启动，而非 RUN 构建时
-# $PORT 仅在容器运行时存在
-CMD streamlit run pumpkin_ai_app.py --server.port=${PORT:-8080} --server.address=0.0.0.0
+# 使用启动脚本确保 PORT 正确展开
+RUN chmod +x start.sh
+CMD ["./start.sh"]
